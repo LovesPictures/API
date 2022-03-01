@@ -1,4 +1,4 @@
-# Fetch DOM Project
+# Fetch DOM 
 
 Now that you've learned about APIs and how to connect with them, let's apply it in the context of a complete application.
 
