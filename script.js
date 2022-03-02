@@ -2,9 +2,9 @@
 console.log(`I am working`);
 
 // variable for the fact
-let fact = document.querySelector("fact");
+let fact = document.querySelector("#fact");
 // variable for the factText
-let factText = document.querySelector("factText");
+let factText = document.querySelector("#factText");
 
 // create a variable for the input event
 let numberInput = document.querySelector(`#numberInput`);
