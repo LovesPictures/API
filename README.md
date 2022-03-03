@@ -6,7 +6,8 @@ In the following application you'll be watching somebody make an API call to an 
 
 ## Solution
 
-![image](https://user-images.githubusercontent.com/25634451/156589271-a15bbab6-244e-463f-beb2-46062d76e43e.png)
+![image](https://user-images.githubusercontent.com/25634451/156595238-1e5213bb-aed3-489c-aa21-c79cf84b03de.png)
+
 
 
 
