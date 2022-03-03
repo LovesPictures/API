@@ -19,7 +19,7 @@ function getFactFetch() {
   //   console.log(number);
 
   //fetch whatever is in the URL and the number variable - this returns a ~ Promise ~
-  fetch(`http://numbersapi.com/#42` + number)
+  fetch(`http://numbersapi.com/` + number)
     //the Promise sytax, needs a .them
     //returns the Promis as map.data - we want to map the responce to
     //if working with JSON set: .then(response => response.json())
@@ -40,3 +40,4 @@ function getFactFetch() {
 
   //make a request to your API usifn the number value
 }
+
