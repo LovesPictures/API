@@ -1,42 +1,223 @@
-// this is my first API!
-console.log(`I am working`);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-// variable for the fact
-let fact = document.querySelector("#fact");
-// variable for the factText
-let factText = document.querySelector("#factText");
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 
-// create a variable for the input event
-let numberInput = document.querySelector(`#numberInput`);
-// create event listener for input event
-numberInput.addEventListener(`input`, getFactFetch);
+:root {
+  --primary: #fecacc; /* pink :) */
+  --secondary: #373737; /* dark grey */
+  --light-1: #ededee; /* light grey  */
+  --light: #d4d4d4; /* mid grey  */
+  --accent: #ffff; /* white */
+  --d-accent: #808080; /*grey */
 
-//get the thing
-function getFactFetch() {
-  //   console.log(2356);
-  //get the value of the input field
-  let number = numberInput.value;
-  //   console.log(number);
+  /* font */
+  --font-primary: "Roboto", sans-serif;
+}
 
-  //fetch whatever is in the URL and the number variable - this returns a ~ Promise ~
-  fetch(`http://numbersapi.com/` + number)
-    //the Promise syntax, needs a .them
-    //returns the Promise as map.data - we want to map the response to
-    //if working with JSON set: .then(response => response.json())
-    .then((response) => response.text())
-    //this
-    .then((data) => {
-      //   console.log(data);
-      //check to see if the number is equal to something or `not = nothing`
-      if (number != ``) {
-        //then proceed
-        //display the text
-        fact.style.display = `block`;
-        factText.innerHTML = data;
-      }
-    })
-    //this logs any errors in the request
-    .catch((err) => console.log(err));
+html,
+body {
+  margin: auto;
+  font-family: var(--font-primary);
+  /* font-family: 'Roboto', sans-serif; */
+}
 
-  //make a request to your API using the number value
+a:link {
+  text-decoration: none !important;
+}
+
+h1 {
+  text-align: center;
+  padding: 60px 10px 10px 10px;
+  font-size: 14px;
+  font-size: 26px;
+  font-family: inherit;
+  color: var(--light);
+}
+
+h3 {
+  text-align: center;
+  font-family: inherit;
+  font-size: 24px;
+  padding: 10px 0px;
+  /* color: var(--light); */
+}
+
+/* link  */
+h5 {
+  text-align: center;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+p {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 0px;
+  color: var(--d-dark);
+  line-height: 1.4;
+}
+
+/* GRID CONTENT -------------------*/
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar2 {
+  grid-area: sidebar2;
+}
+
+.content {
+  grid-area: content;
+  max-height: 1000px;
+}
+
+/* INNER GRID --------------------*/
+
+.grid-2 {
+  display: grid;
+  margin: 20px 0px 10px 0px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(280px));
+  align-items: stretch;
+}
+
+article {
+  border: 1px solid var(--light-1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  padding: 10px 0px 10px 0px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.wrapper {
+  height: 100vh;
+  /* background-color: var(--light-1); */
+}
+
+.wrapper {
+  display: grid;
+  /* grid-gap: 0.3em; */
+  grid-template-rows: 0.5fr 0.3fr 3fr auto;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "sidebar2"
+    "footer";
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 2fr auto;
+    grid-template-rows: 0.5fr 0.5fr 3fr 1fr;
+    grid-template-areas:
+      "header   header"
+      "sidebar  sidebar"
+      "content  content"
+      "sidebar2 sidebar2"
+      "footer   footer";
+  }
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    /* grid-gap: 5px; */
+    grid-template-columns: 1.8fr 1fr 1.8fr;
+    grid-template-rows: 0.5fr 0.5fr 3fr 1fr;
+    grid-template-areas:
+      "header  header  header"
+      "sidebar content sidebar2"
+      "sidebar content sidebar2"
+      "footer  footer  footer";
+  }
+}
+
+.box {
+  background-color: var(--secondary);
+  color: #fff;
+  padding: 10px;
+  font-size: 150%;
+}
+
+.header,
+.footer {
+  background-color: var(--secondary);
+}
+
+.sidebar2 {
+  background-color: var(--secondary);
+}
+
+/* FORM-------------------------- */
+.form-control {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+}
+
+input {
+  padding: 5px;
+}
+
+/* BUTTON ------------------------- */
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: var(--accent);
+  border-radius: 3px;
+  border: none;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--d-accent);
+}
+/* button hover */
+button:hover {
+  background-color: var(--d-accent);
+  color: var(--accent);
+}
+
+/* FACT ------------------------------------ */
+#fact {
+  /* Hides the fact text until the data is fetched  */
+  display: none;
+}
+
+/* FOOTER ------------------------------------ */
+
+.footer a {
+  color: var(--light);
+  outline: none;
+  text-decoration: none;
+  transition: 0.8s;
+}
+
+/* hover  */
+.footer a:hover {
+  color: var(--accent);
 }
