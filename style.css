@@ -28,10 +28,6 @@ body {
   /* font-family: 'Roboto', sans-serif; */
 }
 
-a:link {
-  text-decoration: none !important;
-}
-
 h1 {
   text-align: center;
   padding: 60px 10px 10px 10px;
@@ -46,14 +42,22 @@ h3 {
   font-family: inherit;
   font-size: 24px;
   padding: 10px 0px;
-  color: var(--dark);
+  /* color: var(--light); */
+}
+
+/* link  */
+h5 {
+  text-align: center;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 10px 0px;
 }
 
 p {
   font-family: inherit;
   font-size: 15px;
   padding: 10px 0px;
-  color: var(--dark);
+  color: var(--d-dark);
   line-height: 1.4;
 }
 
@@ -82,7 +86,7 @@ p {
 }
 
 article {
-  border: 1px solid #ccc;
+  border: 1px solid var(--light-1);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
@@ -104,7 +108,7 @@ img {
 
 .wrapper {
   height: 100vh;
-  background-color: var(--light-1);
+  /* background-color: var(--light-1); */
 }
 
 .wrapper {
@@ -196,6 +200,21 @@ button:hover {
 
 /* FACT ------------------------------------ */
 #fact {
-  /* Hides the text until the data is fetched  */
+  /* Hides the fact text until the data is fetched  */
   display: none;
+}
+
+/* FOOTER ------------------------------------ */
+
+.footer a {
+  color: var(--light);
+  outline: none;
+  text-decoration: none;
+  transition: 0.8s;
+}
+/* 
+
+/* hover  */
+.footer a:hover {
+  color: var(--accent);
 }
