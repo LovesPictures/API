@@ -20,17 +20,17 @@ function getFactFetch() {
 
   //fetch whatever is in the URL and the number variable - this returns a ~ Promise ~
   fetch(`http://numbersapi.com/` + number)
-    //the Promise sytax, needs a .them
-    //returns the Promis as map.data - we want to map the responce to
+    //the Promise syntax, needs a .them
+    //returns the Promise as map.data - we want to map the response to
     //if working with JSON set: .then(response => response.json())
     .then((response) => response.text())
     //this
     .then((data) => {
       //   console.log(data);
-      //check to see if the number is equial to something or `not = nothing`
+      //check to see if the number is equal to something or `not = nothing`
       if (number != ``) {
         //then proceed
-        //displacy the text
+        //display the text
         fact.style.display = `block`;
         factText.innerHTML = data;
       }
@@ -38,6 +38,5 @@ function getFactFetch() {
     //this logs any errors in the request
     .catch((err) => console.log(err));
 
-  //make a request to your API usifn the number value
+  //make a request to your API using the number value
 }
-
